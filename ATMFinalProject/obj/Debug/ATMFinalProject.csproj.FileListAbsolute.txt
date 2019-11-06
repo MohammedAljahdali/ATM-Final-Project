@@ -1,0 +1,6 @@
+/Users/mohammedaljahdali/Documents/Development/Projects/C# Projects/ATMFinalProject/ATMFinalProject/bin/Debug/ATMFinalProject.exe
+/Users/mohammedaljahdali/Documents/Development/Projects/C# Projects/ATMFinalProject/ATMFinalProject/bin/Debug/ATMFinalProject.pdb
+/Users/mohammedaljahdali/Documents/Development/Projects/C# Projects/ATMFinalProject/ATMFinalProject/obj/Debug/ATMFinalProject.csprojAssemblyReference.cache
+/Users/mohammedaljahdali/Documents/Development/Projects/C# Projects/ATMFinalProject/ATMFinalProject/obj/Debug/ATMFinalProject.csproj.CoreCompileInputs.cache
+/Users/mohammedaljahdali/Documents/Development/Projects/C# Projects/ATMFinalProject/ATMFinalProject/obj/Debug/ATMFinalProject.exe
+/Users/mohammedaljahdali/Documents/Development/Projects/C# Projects/ATMFinalProject/ATMFinalProject/obj/Debug/ATMFinalProject.pdb
