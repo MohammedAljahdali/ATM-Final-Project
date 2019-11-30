@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ATMFinalProject
 {
@@ -20,26 +20,45 @@ namespace ATMFinalProject
         }
 
         public static void WithdrawCash()
-
         {
-            Console.Write("Enter the Amount You Want to Draw: ");
-            int amount = int.Parse(Console.ReadLine());
-            if (amount % 500 == 0)
+          try
             {
-                MainClass.balance = MainClass.balance - amount;
-                Console.WriteLine("Withdraw is Completed.\nYour Balance is {0}", MainClass.balance);
-            } else
+                Console.Write("Enter the Amount You Want to Draw: ");
+                int amount = int.Parse(Console.ReadLine());
+                if (amount % 500 == 0 && !(MainClass.balance - amount < 0))
+                {
+                    MainClass.balance = MainClass.balance - amount;
+                    Console.WriteLine("Withdraw is Completed.\nYour Balance is {0}", MainClass.balance);
+                }
+                else if (MainClass.balance - amount < 0)
+                {
+                    Console.WriteLine("Withdraw is Not Completed! You do not have enough balance");
+                }
+                else
+                {
+                    Console.WriteLine("Withdraw is Not Completed! Please Enter Amount of 500 Multiples.");
+                }
+            }  catch
             {
-                Console.WriteLine("Withdraw is Not Completed! Please Enter Amount of 500 Multiples.");
-            }  
+                Console.WriteLine("Wrong Input!");
+                return;
+            }
         }
 
         public static void DepositCash()
         {
-            Console.Write("Enter the Amount You Want to Deposit: ");
-            int amount = int.Parse(Console.ReadLine());
-            MainClass.balance = MainClass.balance + amount;
-            Console.WriteLine("Deposit is Completed.\nYour Balance is {0}", MainClass.balance);
+            try
+            { 
+                Console.Write("Enter the Amount You Want to Deposit: ");
+                int amount = int.Parse(Console.ReadLine());
+                MainClass.balance = MainClass.balance + amount;
+                Console.WriteLine("Deposit is Completed.\nYour Balance is {0}", MainClass.balance);
+            }
+            catch
+            {
+                Console.WriteLine("Wrong Input!");
+                return;
+            }
         }
 
         public static void ATMChoices()
@@ -61,7 +80,16 @@ namespace ATMFinalProject
                  "\n4.Quit" +
                  "\n* ********************************************");
                 Console.Write("Enter Your Choice: ");
-                choice = int.Parse(Console.ReadLine());
+                try
+                {
+                    choice = int.Parse(Console.ReadLine());
+                } catch
+                {
+                    Console.WriteLine("Wrong Input!");
+                    Console.ReadKey();
+                    continue;
+                }
+                
 
                 switch (choice)
                 {
@@ -93,17 +121,15 @@ namespace ATMFinalProject
         {
             Console.Write("Enter Your Username: ");
             string usernameInput = Console.ReadLine();
-            if (usernameInput == username)
+            Console.Write("Enter Your Password: ");
+            try
             {
-                Console.Write("Enter Your Password: ");
                 int passwordInput = int.Parse(Console.ReadLine());
-                if (password == passwordInput)
-                {
-                    return true;
-                }
+                return password == passwordInput && usernameInput == username;
+            } catch
+            {
                 return false;
-            }
-            return false;
+            }    
         }
 
 
